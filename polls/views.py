@@ -2,17 +2,29 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 import os
-from . import pynance
-
+from . import pynance, datamaker
 
 
 def home():
-    return(str("Test for Template replace"))
+    return datamaker.mydata()
+
+
+
+def updateData(request):
+    if request.method == 'GET':
+        number = home()
+        print("Post request received!")
+        return HttpResponse(number)
+    else:
+        return HttpResponse("Bad post method!")
+
+
 
 
 def index(request):
-    template = loader.get_template("polls/index.html", {"home": home})
-    return HttpResponse(template.render(), )
+
+    template = loader.get_template("polls/index.html")
+    return HttpResponse(template.render())
     #return HttpResponse("Hello Index.html", "/polls/index.html")
 
 

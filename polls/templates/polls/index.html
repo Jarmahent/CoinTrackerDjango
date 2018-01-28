@@ -1,13 +1,13 @@
 
-<!doctype html>
+  {% load static %}<!doctype html>
 <html>
 
 <head>
     <title>Line Chart</title>
-    {% load static %}
+
     <script src={% static 'js/Chart.min.js' %}></script>
     <script src={% static 'js/utils.js' %}></script>
-
+    <script src={% static 'js/jquery.js' %}></script>
     <style>
     canvas{
         -moz-user-select: none;
@@ -29,8 +29,41 @@
     <button id="removeDataset">Remove Dataset</button>
     <button id="addData">Add Data</button>
     <button id="removeData">Remove Data</button>
-    <p>{{home}}</p>
+    <button id="postdata">POST</button>
+    <p id="test1">Function data from Django: {{home}}</p>
+
     <script>
+
+    $(document).ready(function(){
+      $("#postdata").click(function(e){
+        fetch('updateData')
+      .then(response => response.text().then(function (text){
+        $("#test1").text(text);
+      }))
+      .then(data => {
+          console.log("DATA");
+      })
+      .catch(error => {
+          console.log(error);
+      });
+
+
+      });
+
+    });
+
+    </script>
+    <script>
+    async function myData(){
+      try{
+        var getData = await fetch('updateData');
+        const randomData = await getData.text();
+        return randomData;
+      }catch (error){
+        console.log(error);
+      }
+    }
+
         var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var config = {
             type: 'line',
@@ -118,6 +151,7 @@
         var colorNames = Object.keys(window.chartColors);
         document.getElementById('addDataset').addEventListener('click', function() {
             var colorName = colorNames[config.data.datasets.length % colorNames.length];
+            //var data = {{home}};
             var newColor = window.chartColors[colorName];
             var newDataset = {
                 label: 'People ' + config.data.datasets.length,
@@ -135,13 +169,15 @@
             window.myLine.update();
         });
 
-        document.getElementById('addData').addEventListener('click', function() {
+        document.getElementById('addData').addEventListener('click', async function() {
+          var theData = await myData();
+
             if (config.data.datasets.length > 0) {
                 var month = MONTHS[config.data.labels.length % MONTHS.length];
                 config.data.labels.push(month);
 
                 config.data.datasets.forEach(function(dataset) {
-                    dataset.data.push(randomScalingFactor());
+                    dataset.data.push(theData);
                 });
 
                 window.myLine.update();
@@ -163,6 +199,7 @@
             window.myLine.update();
         });
     </script>
+
 </body>
 
 </html>
