@@ -58,6 +58,7 @@
       try{
         var getData = await fetch('updateData');
         const randomData = await getData.text();
+        console.log("Data from python: " + randomData)
         return randomData;
       }catch (error){
         console.log(error);
