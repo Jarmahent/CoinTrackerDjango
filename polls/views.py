@@ -20,6 +20,17 @@ def updateData(request):
 
 
 
+def getPrice(request):
+    if request.method == 'GET':
+        info = pynance.Pynance(pynance.key, pynance.secret)
+        price = info.get_usd_coin(86, "price")
+        print("Post request received!")
+        return HttpResponse(price)
+    else:
+        return HttpResponse("Bad post method!")
+
+
+
 
 def index(request):
 

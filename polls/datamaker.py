@@ -1,3 +1,3 @@
 import random
 def mydata():
-    return str(random.randint(0, 100))
+    return str(random.uniform(0, 0.07))

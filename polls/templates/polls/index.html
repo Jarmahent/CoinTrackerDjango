@@ -56,7 +56,7 @@
     <script>
     async function randNumber(){
       try{
-        var getData = await fetch('updateData');
+        var getData = await fetch('getPrice');
         const pyData = await getData.text();
         console.log("Data from python: " + pyData)
         return pyData;
@@ -72,8 +72,8 @@
                 labels: [],
                 datasets: [{
                     label: "My First dataset",
-                    backgroundColor: window.chartColors.red,
-                    borderColor: window.chartColors.red,
+                    backgroundColor: window.chartColors.black,
+                    borderColor: window.chartColors.black,
                     data: [
 
                     ],
@@ -99,7 +99,7 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Month'
+                            labelString: 'TIME'
                         }
                     }],
                     yAxes: [{
@@ -158,6 +158,12 @@
                 config.data.labels.push(month);
 
                 config.data.datasets.forEach(function(dataset) {
+                    if(dataset.data.length > 9){
+                      console.log("Activated!");
+                      config.data.labels.shift()
+                      config.data.datasets[0].data.shift();
+                      window.myLine.update();
+                    }
                     dataset.data.push(theData);
                 });
 
