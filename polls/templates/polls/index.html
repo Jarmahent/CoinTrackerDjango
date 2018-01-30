@@ -5,9 +5,15 @@
 <head>
     <title>Line Chart</title>
 
-    <script src={% static 'js/Chart.min.js' %}></script>
-    <script src={% static 'js/utils.js' %}></script>
+
+
     <script src={% static 'js/jquery.js' %}></script>
+    <script src={% static 'js/utils.js' %}></script>
+
+    <script src={% static 'js/bootstrap.min.js' %}></script>
+
+    <script src={% static 'js/Chart.min.js' %}></script>
+    <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
     <style>
     canvas{
         -moz-user-select: none;
@@ -24,16 +30,16 @@
 
     <br>
     <br>
-    <button id="randomizeData">Randomize Data</button>
-    <button id="addDataset">Add Dataset</button>
-    <button id="removeDataset">Remove Dataset</button>
-    <button id="addData">Add Data</button>
-    <button id="removeData">Remove Data</button>
-    <button id="getTrx">POST</button>
-    <button id="activate">Activate GET request</button>
-    <button id="deactivate">Stop GET request</button>
+    <button id="randomizeData" class="alert-success">Randomize Data</button>
+    <button id="addDataset" class="alert-success">Add Dataset</button>
+    <button id="removeDataset" class="alert-success">Remove Dataset</button>
+    <button id="addData" class="alert-success">Add Data</button>
+    <button id="removeData" class="alert-success">Remove Data</button>
+    <button id="getTrx" class="alert-success">POST</button>
+    <button id="activate" class="alert-success">Activate GET request</button>
+    <button id="deactivate" class="alert-success">Stop GET request</button>
 
-    <p id="test1"></p>
+
 
     <script>
 
@@ -75,7 +81,7 @@
                 labels: [],
                 datasets: [{
                     label: "$TRX VALUE",
-                    backgroundColor: window.chartColors.black,
+                    backgroundColor: window.chartColors.blue,
                     borderColor: window.chartColors.black,
                     data: [
 
@@ -220,8 +226,9 @@
                     }
 
 
-                      var repeat = setTimeout(number, 1000);
+                      var repeat = setTimeout(number, 3000);
                       document.getElementById('deactivate').addEventListener('click', function(){  //Stop getting coin data periodically
+
                           clearTimeout(repeat);
                       });
                   });

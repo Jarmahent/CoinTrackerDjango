@@ -2,8 +2,8 @@ from binance.client import Client
 import time
 import math
 import os
-key = ""
-secret = ""
+key = "pvDuMiLDi1q8IgOJ3JwMRjBGZjcAjO2O5FaSjjrbQPKweO79fmDgL4klfhzxckHp"
+secret = "jRzgguMRmggOCzIWHJc7mcOhexfU8VP8XJqCeX9bKSs78hU40gVSbPOCApyqztgK"
 
 
 
