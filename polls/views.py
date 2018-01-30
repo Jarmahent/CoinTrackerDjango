@@ -2,21 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 import os
-from . import pynance, datamaker
+from . import pynance
 
 
-def home():
-    return datamaker.mydata()
-
-
-
-def updateData(request):
-    if request.method == 'GET':
-        number = home()
-        print("Post request received!")
-        return HttpResponse(number)
-    else:
-        return HttpResponse("Bad post method!")
 
 
 
@@ -49,4 +37,4 @@ def get_value(request):
 
 def indextwo(request):
 
-    return render(request, "polls/index.html", {'home': home})
+    return render(request, "polls/index.html")
