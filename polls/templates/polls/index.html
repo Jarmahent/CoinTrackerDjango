@@ -30,6 +30,8 @@
     <button id="addData">Add Data</button>
     <button id="removeData">Remove Data</button>
     <button id="postdata">POST</button>
+    <button id="activate">Activate GET</button>
+    <button id="deactivate">Deactivate GET</button>
     <p id="test1"></p>
 
     <script>
@@ -179,35 +181,34 @@
 
             window.myLine.update();
         });
-         // $(document).ready(function(){
-         //   var d = new Date();
-         //   var hour = d.getHours();
-         //   for()
-         //
-         // });
-
-    //
-    // $(document).ready(function() {
-    //     setTimeout(async function number(){
-    //       var data = await randNumber();
-    //
-    //         if (config.data.datasets.length > 0) {
-    //             var month = MONTHS[config.data.labels.length % MONTHS.length];
-    //             config.data.labels.push(month);
-    //
-    //             config.data.datasets.forEach(function(dataset) {
-    //                 dataset.data.push(data);
-    //             });
-    //
-    //             window.myLine.update();
-    //             number();
-    //         }
-    //     }, 1000);
-    // });
 
 
 
+        document.getElementById('activate').addEventListener('click', function (){
 
+            var activate = setTimeout(async function number(){
+              var data = await randNumber();
+
+                if (config.data.datasets.length > 0) {
+                    var month = MONTHS[config.data.labels.length % MONTHS.length];
+                    config.data.labels.push(month);
+
+                    config.data.datasets.forEach(function(dataset) {
+                        dataset.data.push(data);
+                    });
+
+                    window.myLine.update();
+
+                }
+
+                var repeat = setTimeout(number, 1000);
+                document.getElementById('deactivate').addEventListener('click', function(){
+                    clearTimeout(repeat);
+                });
+            });
+
+
+      });
 
 
     </script>
