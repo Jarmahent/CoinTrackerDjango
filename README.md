@@ -2,3 +2,5 @@ I am using the Django framework to build a graph that tracks the value of the co
 Later more will be added and this readme file will also be updated. 
 
 --So far the graph is able to fetch data that is created with Python using ajax calls. 
+
+![alt text](https://i.imgur.com/iz7eS01.png "Logo Title Text 1")
