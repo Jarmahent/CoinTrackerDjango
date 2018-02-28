@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
 import os
-from . import pynance
+import random
+
 
 
 
@@ -10,9 +11,10 @@ from . import pynance
 
 def getPrice(request):
     if request.method == 'GET':
-        info = pynance.Pynance(pynance.key, pynance.secret)
-        price = info.get_usd_coin(86, "price")
+        #info = pynance.Pynance(pynance.key, pynance.secret)
+        #price = info.get_usd_coin(86, "price")
         print("Post request received!")
+        price = random.randint(1, 255)
         return HttpResponse(price)
     else:
         return HttpResponse("Bad post method!")
@@ -30,8 +32,9 @@ def index(request):
 
 
 def get_value(request):
-    info = pynance.Pynance(pynance.key, pynance.secret)
-    price = info.get_usd_coin(86, "price")
+    #info = pynance.Pynance(pynance.key, pynance.secret)
+    #price = info.get_usd_coin(86, "price")
+    price = random.randint(1, 255)
     return HttpResponse(price)
 
 
