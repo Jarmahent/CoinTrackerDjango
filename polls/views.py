@@ -11,7 +11,7 @@ import random
 
 def getPrice(request):
     if request.method == 'GET':
-        #info = pynance.Pynance(pynance.key, pynance.secret)
+        #info = pynance.Pynance(pynance.key, pynance.secret)  ADD THIS BACKF I YOU  WANT TO GET COIN DATA
         #price = info.get_usd_coin(86, "price")
         print("Post request received!")
         price = random.randint(1, 255)
@@ -32,9 +32,8 @@ def index(request):
 
 
 def get_value(request):
-    #info = pynance.Pynance(pynance.key, pynance.secret)
-    #price = info.get_usd_coin(86, "price")
-    price = random.randint(1, 255)
+    info = pynance.Pynance(pynance.key, pynance.secret)
+    price = info.get_usd_coin(86, "price")
     return HttpResponse(price)
 
 
