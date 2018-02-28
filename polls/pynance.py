@@ -1,4 +1,4 @@
-#from binance.client import Client
+from binance.client import Client
 import time
 import math
 import os
@@ -16,17 +16,6 @@ class Pynance():
         info = self._client.get_all_tickers()
         ucoin = float(info[coin].get(option))
         btc = float(info[12].get(option))
-
         usd = ucoin * btc
         rounded = round(usd, 4)
-        #print("Rounded price for TRX: " + rounded)
-        return(str(rounded))
-
-
-#print(os.environ['LIB_PATH'])
-
-# pynance = Pynance(key, secret)
-# print(pynance.get_usd_coin(86, "price"))
-#
-
-#12 == BTC  86 == TRX
+        return(str(rounded))  #return a dictiornary 1 for value and one for name

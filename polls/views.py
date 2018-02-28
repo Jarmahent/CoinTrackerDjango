@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 import os
 import random
-
+from . import pynance
 
 
 
@@ -11,10 +11,9 @@ import random
 
 def getPrice(request):
     if request.method == 'GET':
-        #info = pynance.Pynance(pynance.key, pynance.secret)  ADD THIS BACKF I YOU  WANT TO GET COIN DATA
-        #price = info.get_usd_coin(86, "price")
-        print("Post request received!")
-        price = random.randint(1, 255)
+        info = pynance.Pynance(pynance.key, pynance.secret)
+        price = info.get_usd_coin(86, "price")
+        #price = random.randint(1, 255) Uncomment this on homedesktop
         return HttpResponse(price)
     else:
         return HttpResponse("Bad post method!")
@@ -28,13 +27,6 @@ def index(request):
     return HttpResponse(template.render())
     #return HttpResponse("Hello Index.html", "/polls/index.html")
 
-
-
-
-def get_value(request):
-    info = pynance.Pynance(pynance.key, pynance.secret)
-    price = info.get_usd_coin(86, "price")
-    return HttpResponse(price)
 
 
 def indextwo(request):
