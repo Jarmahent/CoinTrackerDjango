@@ -1,0 +1,17 @@
+coinUsed = {
+"LTCBTC": 1,
+"BNBBTC": 2,
+"GASBTC": 10,
+"BQXBTC": 34,
+"IOTABTC": 43,
+"MTLBTC": 55,
+"EOSBTC": 69,
+"ETCBTC": 62,
+"TRXBTC": 86,
+"XRPBTC": 93,
+"VENBTC": 105,
+"LSKBTC": 157,
+"ADABTC": 174,
+"NANOBTC" : 253,
+"NCASHBTC": 268
+}
