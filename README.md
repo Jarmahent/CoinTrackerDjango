@@ -1,4 +1,4 @@
-# NOTE: If you wish to clone the working branch, [clone pynance-intig branch](https://github.com/Jarmahent/CoinTrackerDjango/tree/pynance-intig)
+# NOTE: If you wish to clone the working branch, [clone pynance-integ branch](https://github.com/Jarmahent/CoinTrackerDjango/tree/pynance-intig)
 
 ## In this repo I will using the DJANGO framework for python
 ![alt text](https://i.imgur.com/lFxdyUE.png "Logo Title Text 1")
