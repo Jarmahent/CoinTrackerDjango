@@ -16,6 +16,10 @@
     <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
     <link rel="stylesheet" href={% static 'css/animate.css' %}>
     <style>
+
+    #container{
+      text-align: center;
+    }
     canvas{
         -moz-user-select: none;
         -webkit-user-select: none;
@@ -69,6 +73,7 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
         cursor: pointer;
     }
     .sidenav {
+      z-index: -1;
         height: 100%;
         width: 0;
         position: fixed;
@@ -111,6 +116,7 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
 </head>
 
 <body>
+
   <nav>
   <ul>
   <a><li class="bounce" id="juan">Home</li></a>
@@ -120,41 +126,43 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
 
 </ul>
 </nav>
-
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <ul>
-        <li id="trx" title="TRON"><img src="https://cdn.worldvectorlogo.com/logos/tron.svg" height="50" width="50"></li>
-        <li id="bnb" title="BINANCE"><img src="https://s3.amazonaws.com/everipedia-storage/MetaImageThumbnails/6666672668518944656___36945444.png" height="50" width="50"></li>
-        <li id="nano" title="NANO"><img src="https://i2.wp.com/thisthingcalledcrypto.org/wp-content/uploads/2018/02/Nano-XRB-logo.png?fit=256%2C263" height="50" width="50"></li>
-        <li id="ven" title="VECHAIN"><img src="https://globalcryptoacademy.com/wp-content/uploads/2018/01/vechain-logo.png" height="50" width="50"></li>
-        <li id="lsk" title="LISK"><img src="https://cdn.coinranking.com/SydghSdub/lsk.svg" height="50" width="50"></li>
-      </ul>
-      <br>
-      <ul>
-        <li id="gas" title="GAS"><img src="https://cryptosvet.cz/wp-content/uploads/2018/02/1376.png" height="50" width="50"></li>
-        <li id="ncash" title="NUCLEUS"><img src="https://nucleus.vision/img/n-logo-icon.png?v=1.8.5" height="50" width="50"></li>
-        <li id="ltc" title="LITE"><img src="https://litecoin.org/img/litecoin.svg" height="50" width="50"></li>
-        <li id="xrp" title="RIPPLE"><img src="http://www.cryptocoinview.com/coinicons/Ripple.png" height="50" width="50"></li>
-        <li id="iota" title="IOTA"><img src="https://steemitimages.com/DQmQo8C9Y1CYemRVkrtMcM4smCRdHS8HkF97q5k9zN8nFX2/unnamed.png" height="50" width="50"></li>
-      </ul>
-      <br>
-      <ul>
-        <li id="ada" title="CARDANO"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/2010.png" height="50" width="50"></li>
-        <li id="eos" title="EOS"><img src="https://cdn.coinranking.com/H1YjiSd_-/eos.svg" height="50" width="50"></li>
-        <li id="mtl" title="METAL"><img src="https://cgi.cryptoreport.com/images/coins/mtl.svg" height="50" width="50"></li>
-        <li id="bqx" title="ETHOS"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1817.png" height="50" width="50"></li>
-        <li id="etc" title="ETHEREUM"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1321.png" height="50" width="50"></li>
-      </ul>
-      <br>
-      <ul>
-        <li id="neb" title="NEBLIO"><img src="https://coinsmarketcap.ru/images/icons200x200/neblio.png" height="50" width="50"></li>
-        <li id="bcpt" title="BLOCKMASON"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/2061.png" height="50" width="50"></li>
-        <li id="lun" title="LUNYR"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1658.png" height="50" width="50"></li>
-        <li id="xvg" title="VERGE"><img src="https://vergecurrency.com/images/favicon/mstile-310x310.png" height="50" width="50"></li>
-        <li id="ae" title="AETERNITY"><img src="https://cdn.coinranking.com/HJg3pANTZ/ae.svg" height="50" width="50"></li>
-      </ul>
-    </div>
+<div id="mySidenav" class="sidenav">
+  <div id="container">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <ul>
+    <li id="trx" title="TRON"><img src="https://cdn.worldvectorlogo.com/logos/tron.svg" height="50" width="50"></li>
+    <li id="bnb" title="BINANCE"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1839.png" height="50" width="50"></li>
+    <li id="nano" title="NANO"><img src="https://i.imgur.com/mkPGPzu.png" height="50" width="50"></li>
+    <li id="ven" title="VECHAIN"><img src="https://globalcryptoacademy.com/wp-content/uploads/2018/01/vechain-logo.png" height="50" width="50"></li>
+    <li id="lsk" title="LISK"><img src="https://cdn.coinranking.com/SydghSdub/lsk.svg" height="50" width="50"></li>
+  </ul>
+  <br>
+  <ul>
+    <li id="gas" title="GAS"><img src="https://cryptosvet.cz/wp-content/uploads/2018/02/1376.png" height="50" width="50"></li>
+    <li id="ncash" title="NUCLEUS"><img src="https://nucleus.vision/img/n-logo-icon.png?v=1.8.5" height="50" width="50"></li>
+    <li id="ltc" title="LITE"><img src="https://litecoin.org/img/litecoin.svg" height="50" width="50"></li>
+    <li id="xrp" title="RIPPLE"><img src="http://www.cryptocoinview.com/coinicons/Ripple.png" height="50" width="50"></li>
+    <li id="iota" title="IOTA"><img src="https://steemitimages.com/DQmQo8C9Y1CYemRVkrtMcM4smCRdHS8HkF97q5k9zN8nFX2/unnamed.png" height="50" width="50"></li>
+  </ul>
+  <br>
+  <ul>
+    <li id="ada" title="CARDANO"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/2010.png" height="50" width="50"></li>
+    <li id="eos" title="EOS"><img src="https://cdn.coinranking.com/H1YjiSd_-/eos.svg" height="50" width="50"></li>
+    <li id="mtl" title="METAL"><img src="https://cgi.cryptoreport.com/images/coins/mtl.svg" height="50" width="50"></li>
+    <li id="bqx" title="ETHOS"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1817.png" height="50" width="50"></li>
+    <li id="etc" title="ETHEREUM"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1321.png" height="50" width="50"></li>
+  </ul>
+  <br>
+  <ul>
+    <li id="neb" title="NEBLIO"><img src="https://coinsmarketcap.ru/images/icons200x200/neblio.png" height="50" width="50"></li>
+    <li id="bcpt" title="BLOCKMASON"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/2061.png" height="50" width="50"></li>
+    <li id="lun" title="LUNYR"><img src="https://files.coinmarketcap.com/static/img/coins/200x200/1658.png" height="50" width="50"></li>
+    <li id="xvg" title="VERGE"><img src="https://vergecurrency.com/images/favicon/mstile-310x310.png" height="50" width="50"></li>
+    <li id="ae" title="AETERNITY"><img src="https://cdn.coinranking.com/HJg3pANTZ/ae.svg" height="50" width="50"></li>
+  </ul>
+</div>
+</div>
+<div id="blur">
     <div style="width:50%;margin-left: 25%;" >
 
         <canvas id="canvas" ></canvas>
@@ -166,9 +174,10 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
 
       <button id="activate" class="button">Track Live</button>
       <button id="deactivate" class="button">Stop Tracking</button>
-      <button class="button" style="cursor:pointer" onclick="openNav()">Pick Coin</button
+      <button class="button" style="cursor:pointer" onclick="openNav()">Pick Coin</button>
     </div>
 
+</div>
 
 
     <script>
@@ -176,10 +185,12 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
     //document.getElementById("activate")
     function openNav() {
     document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("blur").setAttribute("style", "-webkit-filter: blur(10px);")
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("blur").removeAttribute("style", "-webkit-filter: blur(10px);")
 }
     async function getTrxValue(){
       try{

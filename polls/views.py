@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 import os
 import random
-from . import pynance
+#from . import pynance
 
 
 
@@ -11,9 +11,9 @@ from . import pynance
 
 def getPrice(request):
     if request.method == 'GET':
-        info = pynance.Pynance(pynance.key, pynance.secret)
-        price = info.get_usd_coin(86, "price")
-        #price = random.randint(1, 255) Uncomment this on homedesktop
+        #info = pynance.Pynance(pynance.key, pynance.secret)
+        #price = info.get_usd_coin(86, "price")
+        price = random.randint(1, 255)
         return HttpResponse(price)
     else:
         return HttpResponse("Bad post method!")
