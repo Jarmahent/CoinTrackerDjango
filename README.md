@@ -7,5 +7,5 @@
 
 
 
-![alt text](https://i.imgur.com/iz7eS01.png "Logo Title Text 1")
+![alt text](https://i.imgur.com/Zua1Oqf.png "Logo Title Text 1")
 ## [Thanks to the Binance API wrapper for Python ](https://github.com/sammchardy/python-binance)
